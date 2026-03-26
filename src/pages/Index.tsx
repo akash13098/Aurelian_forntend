@@ -45,7 +45,7 @@ const Homepage = () => {
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 500);
+    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -59,9 +59,9 @@ const Homepage = () => {
           <motion.div
             key={current}
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 0, scale: 1 }}
+            animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0 }}
             className="absolute inset-0"
           >
             <img src={slides[current].image} alt={slides[current].title} className="w-full h-full object-cover" width={1920} height={1080} />
