@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 50% 98%;
+    --foreground: 0 0% 10%;
+
+    --card: 40 33% 97%;
+    --card-foreground: 0 0% 10%;
+
+    --popover: 43 50% 98%;
+    --popover-foreground: 0 0% 10%;
+
+    --primary: 163 89% 16%;
+    --primary-foreground: 43 50% 98%;
+
+    --secondary: 43 56% 52%;
+    --secondary-foreground: 0 0% 10%;
+
+    --muted: 40 20% 93%;
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 43 56% 52%;
+    --accent-foreground: 0 0% 10%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 163 89% 16%;
+
+    --radius: 0.25rem;
+
+    --gold: 43 76% 52%;
+    --gold-light: 43 76% 72%;
+    --gold-dark: 43 76% 38%;
+    --emerald: 163 89% 16%;
+    --emerald-light: 163 60% 30%;
+    --alabaster: 43 50% 98%;
+    --charcoal: 0 0% 10%;
+
+    --sidebar-background: 163 89% 16%;
+    --sidebar-foreground: 43 50% 98%;
+    --sidebar-primary: 43 56% 52%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 163 60% 20%;
+    --sidebar-accent-foreground: 43 50% 98%;
+    --sidebar-border: 163 60% 22%;
+    --sidebar-ring: 43 56% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .gold-shimmer {
+    background: linear-gradient(
+      110deg,
+      hsl(var(--gold)) 0%,
+      hsl(var(--gold-light)) 45%,
+      hsl(var(--gold)) 55%,
+      hsl(var(--gold-light)) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s ease-in-out infinite;
+  }
+
+  .gold-text {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)),
+      hsl(var(--gold)),
+      hsl(var(--gold-light)),
+      hsl(var(--gold))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-header {
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
