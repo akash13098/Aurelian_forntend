@@ -44,10 +44,10 @@ const philosophyItems = [
 const Homepage = () => {
   const [current, setCurrent] = useState(0);
 
-  useEffect(() => {
-    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 500);
-    return () => clearInterval(timer);
-  }, []);
+  // useEffect(() => {
+  //   const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 500);
+  //   return () => clearInterval(timer);
+  // }, []);
 
   const featured = products.slice(0, 4);
 
