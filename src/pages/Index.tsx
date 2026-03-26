@@ -44,10 +44,10 @@ const philosophyItems = [
 const Homepage = () => {
   const [current, setCurrent] = useState(0);
 
-  // useEffect(() => {
-  //   const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 500);
-  //   return () => clearInterval(timer);
-  // }, []);
+  useEffect(() => {
+    const timer = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 500);
+    return () => clearInterval(timer);
+  }, []);
 
   const featured = products.slice(0, 4);
 
@@ -59,7 +59,7 @@ const Homepage = () => {
           <motion.div
             key={current}
             initial={{ opacity: 0, scale: 1.1 }}
-            animate={{ opacity: 1, scale: 1 }}
+            animate={{ opacity: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.8 }}
             className="absolute inset-0"
